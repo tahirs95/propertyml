@@ -29,17 +29,18 @@ def predict():
     final_features = [[t[0] for t in X.values.tolist()]]
     '''
     df_data = pd.read_csv('house_test_data.csv')
-    sel_columns = [  'SqFtTotal',
-                     'Bath',
-                     'Bed',
-                     'PropertyType',
-                     'CondoType',
-                     'Basement_Full',
-                     'city',
-                     'Community',  
-                     'Basement_WalkoutWalkUp',
-                     'Parking_DoubleGarageAttached',
-                     'Parking_NoGarage']
+    sel_columns = [ 'AssessedValue,
+    				'SqFtTotal',
+                    'Bath',
+                    'Bed',
+                    'PropertyType',
+                    'CondoType',
+                    'Basement_Full',
+                    'city',
+                    'Community',  
+                    'Basement_WalkoutWalkUp',
+                    'Parking_DoubleGarageAttached',
+                    'Parking_NoGarage']
     df_data = df_data[sel_columns]
     '''
     print(final_features)
