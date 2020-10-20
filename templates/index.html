@@ -18,9 +18,10 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
       
+    <input type="text" name="AssessedValue" placeholder="AssessedValue" required="required" />
     <input type="text" name="SqFtTotal" placeholder="SqFtTotal" required="required" />
     <input type="text" name="Bath" placeholder="Bath" required="required" />
-		<input type="text" name="Bed" placeholder="Bed" required="required" />
+	<input type="text" name="Bed" placeholder="Bed" required="required" />
     <input type="text" name="PropertyType" placeholder="PropertyType" required="required" />
     <input type="text" name="CondoType" placeholder="CondoType" required="required" />
     <input type="text" name="Basement_Full" placeholder="Basement_Full" required="required" />
