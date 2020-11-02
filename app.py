@@ -18,32 +18,45 @@ def predict():
     For rendering results on HTML GUI
     '''
     features = [x for x in request.form.values()]
-    print(features)
-    X = pd.DataFrame(features)
+    sel_columns = [  'Assessed_Value',
+                     'SqFtTotal',
+                     'Bath',
+                     'Bed',
+                     'Basement_Full',
+                     'Basement_WalkoutWalkUp',
+                     'YrBlt',
+                     'Community',
+                     'city']
+    X = pd.DataFrame([features], columns =sel_columns )
+    print(X)
+    X['Assessed_Value'] = X['Assessed_Value'].astype('float')
+    X['SqFtTotal'] = X['SqFtTotal'].astype('float')
+    X['Bath'] = X['Bath'].astype('float')
+    X['Bed'] = X['Bed'].astype('float')
+    X['YrBlt'] = X['YrBlt'].astype('float')
     labels = LabelEncoder()
     for col in X.columns:
-        #print(col,X[col].dtype)
+        print(col,X[col].dtype)
         if (X[col].dtype =='object') | (X[col].dtype =='bool'):
             X[col] = labels.fit_transform(X[col].astype('str')) 
 
-    final_features = [[t[0] for t in X.values.tolist()]]
+    final_features = X.values #[[t[0] for t in X.values.tolist()]]
     '''
     df_data = pd.read_csv('house_test_data.csv')
-    sel_columns = [ 'AssessedValue,
-    				'SqFtTotal',
-                    'Bath',
-                    'Bed',
-                    'PropertyType',
-                    'CondoType',
-                    'Basement_Full',
-                    'city',
-                    'Community',  
-                    'Basement_WalkoutWalkUp',
-                    'Parking_DoubleGarageAttached',
-                    'Parking_NoGarage']
+    sel_columns = [  'SqFtTotal',
+                     'Bath',
+                     'Bed',
+                     'PropertyType',
+                     'CondoType',
+                     'Basement_Full',
+                     'city',
+                     'Community',  
+                     'Basement_WalkoutWalkUp',
+                     'Parking_DoubleGarageAttached',
+                     'Parking_NoGarage']
     df_data = df_data[sel_columns]
     '''
-    print(final_features)
+    print('final_features',final_features)
     prediction = model.predict(final_features)
 
     #print(prediction)
