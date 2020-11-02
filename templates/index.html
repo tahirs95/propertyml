@@ -21,15 +21,20 @@
     <input type="text" name="AssessedValue" placeholder="AssessedValue" required="required" />
     <input type="text" name="SqFtTotal" placeholder="SqFtTotal" required="required" />
     <input type="text" name="Bath" placeholder="Bath" required="required" />
-	<input type="text" name="Bed" placeholder="Bed" required="required" />
-    <input type="text" name="PropertyType" placeholder="PropertyType" required="required" />
-    <input type="text" name="CondoType" placeholder="CondoType" required="required" />
-    <input type="text" name="Basement_Full" placeholder="Basement_Full" required="required" />
-    <input type="text" name="Basement_WalkoutWalkUp" placeholder="Basement_WalkoutWalkUp" required="required" />
-    <input type="text" name="Parking_DoubleGarageAttached" placeholder="Parking_DoubleGarageAttached" required="required" />
-    <input type="text" name="Parking_NoGarage" placeholder="Parking_NoGarage" required="required" />
+		<input type="text" name="Bed" placeholder="Bed" required="required" />
+    <label>Basement_WalkoutWalkup</label>
+    <SELECT type="text" name="Basement_WalkoutWalkUp" placeholder="Basement_WalkoutWalkUp" required="required">
+    	<option value="True">Yes</option>
+    	<option value="false">No</option>
+    </SELECT>
+    <label>Basement_Full</label>
+    <SELECT type="text" name="Basement_Full" placeholder="Basement_Full" required="required" >
+    	<option value="True">Yes</option>
+    	<option value="false">No</option>
+    </SELECT>
+    <input type="text" name="YrBlt" placeholder="YrBlt" required="required" />
     <input type="text" name="Community" placeholder="Community" required="required" />
-    <input type="text" name="city" placeholder="city" required="required" />
+    <input type="text" name="city" placeholder="Calgary" required="required" value="Calgary" disabled="True" />
       
 
     <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
